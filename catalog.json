@@ -11,7 +11,7 @@
       "grade": "Γ Λυκείου",
       "pages": 200,
       "file": "books/book_001.csv",
-      "url": "https://raw.githubusercontent.com/ΧΡΗΣΤΗΣ/ΡΕΠΟ/main/books/book_001.csv",
+      "url": "https://raw.githubusercontent.com/dporpatonelis-crypto/digital-library-core/refs/heads/main/books/book_001.csv",
       "description": "Βιβλίο μαθητή Θρησκευτικών Γ΄ Λυκείου. Χριστιανισμός και σύγχρονος κόσμος.",
       "thumbnail": ""
     }
@@ -30,7 +30,7 @@
       "grade": "Β Λυκείου",
       "pages": 200,
       "file": "books/book_002.csv",
-      "url": "https://raw.githubusercontent.com/ΧΡΗΣΤΗΣ/ΡΕΠΟ/main/books/book_001.csv",
+      "url": "https://raw.githubusercontent.com/dporpatonelis-crypto/digital-library-core/refs/heads/main/books/book_002.csv",
       "description": "Βιβλίο μαθητή Θρησκευτικών Γ΄ Λυκείου. Χριστιανισμός και σύγχρονος κόσμος.",
       "thumbnail": ""
     }
