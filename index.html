@@ -1,44 +1,110 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <title>Ψηφιακή Βιβλιοθήκη</title>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 2rem; }
-        h1 { text-align: center; color: #2c3e50; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
-        .card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .card h3 { margin: 0 0 0.5rem; color: #2c3e50; }
-        .subject { background: #27ae60; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-bottom: 0.8rem; }
-        .btn { display: inline-block; background: #27ae60; color: white; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; font-size: 0.9rem; }
-        .btn-outline { background: transparent; border: 2px solid #27ae60; color: #27ae60; margin-left: 8px; }
-        .meta { color: #888; font-size: 0.85rem; margin: 4px 0; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7f6">
+  <title>Ψηφιακή Βιβλιοθήκη Μαθημάτων</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #202a3a; background: #f4f7f6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: clamp(1rem, 4vw, 3rem); }
+    main { max-width: 1240px; margin: 0 auto; }
+    header { margin: 0 0 2rem; text-align: center; }
+    h1 { margin: 0; color: #202c45; font-size: clamp(1.8rem, 4vw, 2.7rem); }
+    header p { margin: .55rem 0 0; color: #536176; }
+    section { margin: 2.3rem 0; }
+    h2 { margin: 0 0 1rem; font-size: 1.45rem; color: #283d5d; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 1rem; }
+    .card { display: flex; flex-direction: column; min-height: 220px; padding: 1.25rem; border: 1px solid #d9e0e9; border-radius: 16px; background: #fff; box-shadow: 0 5px 16px #1d33400d; }
+    .tag { align-self: flex-start; margin-bottom: .8rem; padding: .28rem .72rem; border-radius: 999px; background: #e8f3ed; color: #206246; font-size: .8rem; font-weight: 700; }
+    .lesson .tag { background: #eee9ff; color: #5033a0; }
+    h3 { margin: 0 0 .55rem; font-size: 1.1rem; line-height: 1.4; }
+    .meta { margin: 0 0 .55rem; color: #657184; font-size: .9rem; }
+    .description { margin: .2rem 0 1rem; color: #414e61; line-height: 1.5; }
+    .actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: auto; padding-top: .8rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: .55rem .9rem; border: 1px solid #267354; border-radius: 9px; background: #267354; color: #fff; font-weight: 700; text-decoration: none; }
+    .lesson .button { border-color: #6544ca; background: #6544ca; }
+    .button.secondary { background: transparent; color: #267354; }
+    .lesson .button.secondary { color: #6544ca; }
+    .button:focus-visible { outline: 3px solid #f0ae42; outline-offset: 3px; }
+    .empty, .error { color: #657184; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #d9e0e9; color: #657184; font-size: .85rem; }
+  </style>
 </head>
 <body>
-    <h1>📚 Ψηφιακή Βιβλιοθήκη</h1>
-    <div class="grid" id="bookGrid">Φόρτωση...</div>
+  <main>
+    <header>
+      <h1>📚 Ψηφιακή Βιβλιοθήκη</h1>
+      <p>Βιβλία και διαδραστικό υλικό μαθημάτων</p>
+    </header>
+    <section aria-labelledby="books-heading">
+      <h2 id="books-heading">Βιβλία μαθητή</h2>
+      <div class="grid" id="bookGrid" aria-live="polite"><p class="empty">Φόρτωση…</p></div>
+    </section>
+    <section aria-labelledby="lessons-heading">
+      <h2 id="lessons-heading">Διαδραστικά μαθήματα</h2>
+      <div class="grid" id="lessonGrid" aria-live="polite"><p class="empty">Φόρτωση…</p></div>
+    </section>
+    <footer>Τα διαδραστικά HTML ανοίγουν online από το GitHub. Η υπάρχουσα συλλογή βιβλίων διατηρείται.</footer>
+  </main>
+  <script>
+    const make = (tag, className, text) => {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text !== undefined) element.textContent = text;
+      return element;
+    };
+    const link = (href, label, secondary = false) => {
+      const a = make('a', `button${secondary ? ' secondary' : ''}`, label);
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      return a;
+    };
+    const showError = message => {
+      for (const id of ['bookGrid', 'lessonGrid']) {
+        const grid = document.getElementById(id);
+        grid.replaceChildren(make('p', 'error', message));
+      }
+    };
+    fetch('catalog.json', { cache: 'no-cache' })
+      .then(response => { if (!response.ok) throw new Error('catalog'); return response.json(); })
+      .then(catalog => {
+        const books = document.getElementById('bookGrid');
+        books.replaceChildren();
+        for (const book of catalog.books || []) {
+          const card = make('article', 'card');
+          card.append(make('span', 'tag', book.subject || 'Βιβλίο'));
+          card.append(make('h3', '', book.title || 'Χωρίς τίτλο'));
+          if (book.author) card.append(make('p', 'meta', `✍️ ${book.author}`));
+          if (book.pages) card.append(make('p', 'meta', `📄 ${book.pages} σελίδες`));
+          if (book.description) card.append(make('p', 'description', book.description));
+          const actions = make('div', 'actions');
+          if (book.file) actions.append(link(book.file, 'Λήψη CSV'));
+          if (book.url) actions.append(link(book.url, 'Raw URL', true));
+          card.append(actions);
+          books.append(card);
+        }
+        if (!books.children.length) books.append(make('p', 'empty', 'Δεν υπάρχουν καταχωρισμένα βιβλία.'));
 
-    <script>
-        fetch('catalog.json')
-          .then(r => r.json())
-          .then(data => {
-            const grid = document.getElementById('bookGrid');
-            grid.innerHTML = '';
-            data.books.forEach(book => {
-                grid.innerHTML += `
-                  <div class="card">
-                    <span class="subject">${book.subject}</span>
-                    <h3>${book.title}</h3>
-                    <p class="meta">✍️ ${book.author}</p>
-                    <p class="meta">📄 ${book.pages} σελίδες</p>
-                    <p>${book.description}</p>
-                    <a href="${book.file}" class="btn">📥 Λήψη CSV</a>
-                    <a href="${book.url}" class="btn btn-outline">🔗 Raw URL</a>
-                  </div>`;
-            });
-          });
-    </script>
+        const lessons = document.getElementById('lessonGrid');
+        lessons.replaceChildren();
+        for (const lesson of catalog.lessons || []) {
+          const card = make('article', 'card lesson');
+          card.append(make('span', 'tag', `${lesson.subject || 'Μάθημα'} · HTML`));
+          card.append(make('h3', '', lesson.title || 'Χωρίς τίτλο'));
+          if (lesson.description) card.append(make('p', 'description', lesson.description));
+          if (lesson.size_bytes) card.append(make('p', 'meta', `${(lesson.size_bytes / 1048576).toFixed(1)} MB`));
+          const actions = make('div', 'actions');
+          if (lesson.url) actions.append(link(lesson.url, 'Άνοιγμα μαθήματος'));
+          if (lesson.github_url) actions.append(link(lesson.github_url, 'Αρχείο στο GitHub', true));
+          card.append(actions);
+          lessons.append(card);
+        }
+        if (!lessons.children.length) lessons.append(make('p', 'empty', 'Δεν υπάρχουν καταχωρισμένα διαδραστικά μαθήματα.'));
+      })
+      .catch(() => showError('Δεν ήταν δυνατή η φόρτωση του καταλόγου.'));
+  </script>
 </body>
 </html>
-```
