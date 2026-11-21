@@ -31,6 +31,24 @@
   ],
   "lessons": [
     {
+      "id": "saint-gregory-theologian-journey",
+      "title": "Άγιος Γρηγόριος ο Θεολόγος · Ένας ποιητής επίσκοπος",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/saint-gregory-theologian-journey.html",
+      "size_bytes": 10897495,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/saint-gregory-theologian-journey.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/saint-gregory-theologian-journey.html"
+    },
+    {
+      "id": "saint-john-chrysostom-journey",
+      "title": "Άγιος Ιωάννης ο Χρυσόστομος · Ο λόγος που γίνεται πράξη",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/saint-john-chrysostom-journey.html",
+      "size_bytes": 11029439,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/saint-john-chrysostom-journey.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/saint-john-chrysostom-journey.html"
+    },
+    {
       "id": "saint-luke-journey",
       "title": "Άγιος Λουκάς ο Ιατρός",
       "subject": "Θρησκευτικά",
@@ -38,6 +56,33 @@
       "size_bytes": 5641581,
       "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/saint-luke-journey.html",
       "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/saint-luke-journey.html"
+    },
+    {
+      "id": "saint-luke-relations",
+      "title": "Άγιος Λουκάς ο Ιατρός · Βίος, ύμνος και σχέσεις",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/saint-luke-relations.html",
+      "size_bytes": 5712160,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/saint-luke-relations.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/saint-luke-relations.html"
+    },
+    {
+      "id": "trinitarian-doctrine-economic",
+      "title": "Αγία Τριάδα · Τα βασικά και η εμβάθυνση",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/trinitarian-doctrine-economic.html",
+      "size_bytes": 5491579,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/trinitarian-doctrine-economic.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/trinitarian-doctrine-economic.html"
+    },
+    {
+      "id": "saint-philothei-journey",
+      "title": "Αγία Φιλοθέη · Από την περιουσία στην προσφορά",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/saint-philothei-journey.html",
+      "size_bytes": 5540780,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/saint-philothei-journey.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/saint-philothei-journey.html"
     },
     {
       "id": "athens-history-mindmap",
@@ -49,67 +94,13 @@
       "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/athens-history-mindmap.html"
     },
     {
-      "id": "paulos-school-mindmap",
-      "title": "Παύλος · Από διώκτης των Χριστιανών, Απόστολος των Εθνών",
+      "id": "science-heart-mindmap",
+      "title": "Επιστήμη και θρησκεία",
       "subject": "Θρησκευτικά",
-      "file": "lessons/paulos-school-mindmap.html",
-      "size_bytes": 4648785,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/paulos-school-mindmap.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/paulos-school-mindmap.html"
-    },
-    {
-      "id": "paulos-apostolos-ethnon",
-      "title": "Παύλος · Απόστολος των Εθνών",
-      "subject": "Θρησκευτικά",
-      "file": "lessons/paulos-apostolos-ethnon.html",
-      "size_bytes": 11760392,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/paulos-apostolos-ethnon.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/paulos-apostolos-ethnon.html"
-    },
-    {
-      "id": "dentro-diathikis-puzzle",
-      "title": "Το Δέντρο της Διαθήκης · διαδραστικές δραστηριότητες",
-      "subject": "Θρησκευτικά",
-      "file": "lessons/dentro-diathikis-puzzle.html",
-      "size_bytes": 28930130,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/dentro-diathikis-puzzle.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/dentro-diathikis-puzzle.html"
-    },
-    {
-      "id": "concentric-classroom",
-      "title": "Ομόκεντροι δακτύλιοι · Πώς αρχίζει ο κόσμος;",
-      "subject": "Θρησκευτικά",
-      "file": "lessons/concentric-classroom.html",
-      "size_bytes": 19855606,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/concentric-classroom.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/concentric-classroom.html"
-    },
-    {
-      "id": "cosmology-classroom",
-      "title": "Κλωστές · Πώς αρχίζει ο κόσμος;",
-      "subject": "Θρησκευτικά",
-      "file": "lessons/cosmology-classroom.html",
-      "size_bytes": 18173512,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/cosmology-classroom.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/cosmology-classroom.html"
-    },
-    {
-      "id": "concentric-classroom-sygkentrotiko",
-      "title": "Ομόκεντροι δακτύλιοι · συγκεντρωτική έκδοση",
-      "subject": "Θρησκευτικά",
-      "file": "lessons/concentric-classroom-sygkentrotiko.html",
-      "size_bytes": 19849411,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/concentric-classroom-sygkentrotiko.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/concentric-classroom-sygkentrotiko.html"
-    },
-    {
-      "id": "history-period-selector",
-      "title": "Ιστορικοί κόσμοι · Εύρεση περιόδου",
-      "subject": "Θρησκευτικά",
-      "file": "lessons/history-period-selector.html",
-      "size_bytes": 3992584,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/history-period-selector.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/history-period-selector.html"
+      "file": "lessons/science-heart-mindmap.html",
+      "size_bytes": 4681952,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/science-heart-mindmap.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/science-heart-mindmap.html"
     },
     {
       "id": "eikona-talanta-loukas",
@@ -130,40 +121,58 @@
       "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/talents-music-mindmap.html"
     },
     {
-      "id": "christos-gennatai",
-      "title": "Χριστός γεννάται · Διαδραστικός χάρτης ύμνου",
+      "id": "world-religions-paths",
+      "title": "Θρησκείες του κόσμου · Πέντε διαδρομές μελέτης",
       "subject": "Θρησκευτικά",
-      "file": "lessons/christos-gennatai.html",
-      "size_bytes": 9661800,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/christos-gennatai.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/christos-gennatai.html"
+      "file": "lessons/world-religions-paths.html",
+      "size_bytes": 15136603,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/world-religions-paths.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/world-religions-paths.html"
     },
     {
-      "id": "pentecost-music-mindmap",
-      "title": "Πεντηκοστή · Φωτεινός χάρτης και σύνθεση ύμνου",
+      "id": "history-period-selector",
+      "title": "Ιστορικοί κόσμοι · Εύρεση περιόδου",
       "subject": "Θρησκευτικά",
-      "file": "lessons/pentecost-music-mindmap.html",
-      "size_bytes": 4309540,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/pentecost-music-mindmap.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/pentecost-music-mindmap.html"
+      "file": "lessons/history-period-selector.html",
+      "size_bytes": 3992584,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/history-period-selector.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/history-period-selector.html"
     },
     {
-      "id": "trinitarian-doctrine-economic",
-      "title": "Αγία Τριάδα · Τα βασικά και η εμβάθυνση",
+      "id": "patristic-scripture-cross-references",
+      "title": "Κείμενο, Γραφή και ύμνοι · Παράλληλα χωρία",
       "subject": "Θρησκευτικά",
-      "file": "lessons/trinitarian-doctrine-economic.html",
-      "size_bytes": 5491579,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/trinitarian-doctrine-economic.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/trinitarian-doctrine-economic.html"
+      "file": "lessons/patristic-scripture-cross-references.html",
+      "size_bytes": 101327,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/patristic-scripture-cross-references.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/patristic-scripture-cross-references.html"
     },
     {
-      "id": "science-heart-mindmap",
-      "title": "Επιστήμη και θρησκεία",
+      "id": "cosmology-classroom",
+      "title": "Κλωστές · Πώς αρχίζει ο κόσμος;",
       "subject": "Θρησκευτικά",
-      "file": "lessons/science-heart-mindmap.html",
-      "size_bytes": 4681952,
-      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/science-heart-mindmap.html",
-      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/science-heart-mindmap.html"
+      "file": "lessons/cosmology-classroom.html",
+      "size_bytes": 18173512,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/cosmology-classroom.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/cosmology-classroom.html"
+    },
+    {
+      "id": "saint-athanasius-journey",
+      "title": "Μέγας Αθανάσιος · Ένας αγωνιστής ιεράρχης",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/saint-athanasius-journey.html",
+      "size_bytes": 10206554,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/saint-athanasius-journey.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/saint-athanasius-journey.html"
+    },
+    {
+      "id": "megas-vasileios",
+      "title": "Μέγας Βασίλειος · Βίος, βιβλικά πρότυπα και απολυτίκιο",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/megas-vasileios.html",
+      "size_bytes": 14662363,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/megas-vasileios.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/megas-vasileios.html"
     },
     {
       "id": "na-agapate-ta-dentra",
@@ -193,6 +202,60 @@
       "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/odynes-mindmap.html"
     },
     {
+      "id": "concentric-classroom",
+      "title": "Ομόκεντροι δακτύλιοι · Πώς αρχίζει ο κόσμος;",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/concentric-classroom.html",
+      "size_bytes": 19855606,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/concentric-classroom.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/concentric-classroom.html"
+    },
+    {
+      "id": "concentric-classroom-sygkentrotiko",
+      "title": "Ομόκεντροι δακτύλιοι · συγκεντρωτική έκδοση",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/concentric-classroom-sygkentrotiko.html",
+      "size_bytes": 19849411,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/concentric-classroom-sygkentrotiko.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/concentric-classroom-sygkentrotiko.html"
+    },
+    {
+      "id": "paulos-school-mindmap",
+      "title": "Παύλος · Από διώκτης των Χριστιανών, Απόστολος των Εθνών",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/paulos-school-mindmap.html",
+      "size_bytes": 4648785,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/paulos-school-mindmap.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/paulos-school-mindmap.html"
+    },
+    {
+      "id": "paulos-apostolos-ethnon",
+      "title": "Παύλος · Απόστολος των Εθνών",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/paulos-apostolos-ethnon.html",
+      "size_bytes": 11760392,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/paulos-apostolos-ethnon.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/paulos-apostolos-ethnon.html"
+    },
+    {
+      "id": "pentecost-music-mindmap",
+      "title": "Πεντηκοστή · Φωτεινός χάρτης και σύνθεση ύμνου",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/pentecost-music-mindmap.html",
+      "size_bytes": 4309540,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/pentecost-music-mindmap.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/pentecost-music-mindmap.html"
+    },
+    {
+      "id": "dentro-diathikis-puzzle",
+      "title": "Το Δέντρο της Διαθήκης · διαδραστικές δραστηριότητες",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/dentro-diathikis-puzzle.html",
+      "size_bytes": 28930130,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/dentro-diathikis-puzzle.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/dentro-diathikis-puzzle.html"
+    },
+    {
       "id": "theia-oikonomia-mindmap",
       "title": "Το Σχέδιο της Θείας Οικονομίας",
       "subject": "Θρησκευτικά",
@@ -200,6 +263,15 @@
       "size_bytes": 4614037,
       "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/theia-oikonomia-mindmap.html",
       "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/theia-oikonomia-mindmap.html"
+    },
+    {
+      "id": "christos-gennatai",
+      "title": "Χριστός γεννάται · Διαδραστικός χάρτης ύμνου",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/christos-gennatai.html",
+      "size_bytes": 9661800,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/christos-gennatai.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/christos-gennatai.html"
     }
   ]
 }
