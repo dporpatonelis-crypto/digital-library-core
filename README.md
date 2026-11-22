@@ -2,7 +2,7 @@
 
 Εικονογραφημένος κατάλογος αυτοτελών, διαδραστικών μαθημάτων HTML. Η επιλογή μιας κάρτας ανοίγει απευθείας το μάθημα, έτοιμο για χρήση στον browser.
 
-[Άνοιγμα της βιβλιοθήκης](https://dporpatonelis-crypto.github.io/html-digital-library/)
+[Άνοιγμα της βιβλιοθήκης](https://dporpatonelis-crypto.github.io/digital-library-core/)
 
 ## Προσθήκη ή ενημέρωση μαθήματος
 
