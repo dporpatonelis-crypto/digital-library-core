@@ -1,110 +1,349 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f7f6">
+  <meta name="theme-color" content="#102e32">
+  <meta name="description" content="Εικονογραφημένος κατάλογος διαδραστικών μαθημάτων. Επίλεξε μια κάρτα για να ανοίξεις το μάθημα.">
   <title>Ψηφιακή Βιβλιοθήκη Μαθημάτων</title>
   <style>
-    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #202a3a; background: #f4f7f6; }
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: clamp(1rem, 4vw, 3rem); }
-    main { max-width: 1240px; margin: 0 auto; }
-    header { margin: 0 0 2rem; text-align: center; }
-    h1 { margin: 0; color: #202c45; font-size: clamp(1.8rem, 4vw, 2.7rem); }
-    header p { margin: .55rem 0 0; color: #536176; }
-    section { margin: 2.3rem 0; }
-    h2 { margin: 0 0 1rem; font-size: 1.45rem; color: #283d5d; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 1rem; }
-    .card { display: flex; flex-direction: column; min-height: 220px; padding: 1.25rem; border: 1px solid #d9e0e9; border-radius: 16px; background: #fff; box-shadow: 0 5px 16px #1d33400d; }
-    .tag { align-self: flex-start; margin-bottom: .8rem; padding: .28rem .72rem; border-radius: 999px; background: #e8f3ed; color: #206246; font-size: .8rem; font-weight: 700; }
-    .lesson .tag { background: #eee9ff; color: #5033a0; }
-    h3 { margin: 0 0 .55rem; font-size: 1.1rem; line-height: 1.4; }
-    .meta { margin: 0 0 .55rem; color: #657184; font-size: .9rem; }
-    .description { margin: .2rem 0 1rem; color: #414e61; line-height: 1.5; }
-    .actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: auto; padding-top: .8rem; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: .55rem .9rem; border: 1px solid #267354; border-radius: 9px; background: #267354; color: #fff; font-weight: 700; text-decoration: none; }
-    .lesson .button { border-color: #6544ca; background: #6544ca; }
-    .button.secondary { background: transparent; color: #267354; }
-    .lesson .button.secondary { color: #6544ca; }
-    .button:focus-visible { outline: 3px solid #f0ae42; outline-offset: 3px; }
-    .empty, .error { color: #657184; }
-    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #d9e0e9; color: #657184; font-size: .85rem; }
+    :root {
+      color-scheme: dark;
+      --background: #0d292d;
+      --surface: #123538;
+      --border: #8e7c514f;
+      --text: #f6f0e2;
+      --muted: #becdc4;
+      --gold: #ecd38c;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: radial-gradient(ellipse 62rem 28rem at 50% 0, #254e50, transparent);
+    }
+
+    .shell {
+      width: min(74rem, calc(100% - clamp(1.75rem, 6vw, 5rem)));
+      margin-inline: auto;
+    }
+
+    header {
+      padding-block: clamp(2rem, 5.5vw, 4.5rem) clamp(1.6rem, 4vw, 2.75rem);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font: 500 clamp(2.15rem, 5vw, 3.75rem)/1.08 Georgia, "Times New Roman", serif;
+    }
+
+    header p {
+      margin: .9rem 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    header::after {
+      content: "";
+      display: block;
+      width: 3rem;
+      margin: 1.4rem auto 0;
+      border-top: 1px solid var(--gold);
+    }
+
+    main { padding-bottom: clamp(2rem, 5vw, 4.5rem); }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .7rem 1.25rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .search {
+      position: relative;
+      width: min(100%, 25rem);
+    }
+
+    .search::before,
+    .search::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .search::before {
+      top: 1rem;
+      left: 1rem;
+      width: .78rem;
+      height: .78rem;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+    }
+
+    .search::after {
+      top: 1.75rem;
+      left: 1.62rem;
+      width: .34rem;
+      height: 1.5px;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    .search input {
+      width: 100%;
+      min-height: 3rem;
+      padding: .65rem .9rem .65rem 2.55rem;
+      border: 1px solid #748d84;
+      border-radius: .65rem;
+      background: #102e32;
+      color: var(--text);
+      font: inherit;
+    }
+
+    .search input::placeholder { color: var(--muted); }
+    .search input:disabled { opacity: .65; }
+
+    .search input:focus-visible,
+    .lesson-card:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .status {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(.9rem, 2vw, 1.35rem);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lesson-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: .9rem;
+      background: linear-gradient(145deg, #1a4345, var(--surface) 75%);
+      box-shadow: 0 .55rem 1.4rem #0003;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .lesson-card:hover,
+    .lesson-card:focus-visible {
+      border-color: #d7b35c;
+      box-shadow: 0 .65rem 1.6rem #0005;
+    }
+
+    .cover {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at 30% 10%, #396164, #183d40 65%);
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 240ms ease;
+    }
+
+    .lesson-card:hover img { transform: scale(1.035); }
+
+    .caption {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      gap: .9rem;
+      min-height: 5.3rem;
+      padding: .95rem 1.05rem;
+    }
+
+    .caption h2 {
+      margin: 0;
+      overflow-wrap: anywhere;
+      font: 500 clamp(1.15rem, 1.7vw, 1.38rem)/1.28 Georgia, "Times New Roman", serif;
+    }
+
+    .arrow {
+      display: grid;
+      flex: none;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border: 1px solid #d7b35c70;
+      border-radius: 50%;
+      color: var(--gold);
+      line-height: 1;
+      transition: background-color 180ms ease;
+    }
+
+    .lesson-card:hover .arrow,
+    .lesson-card:focus-visible .arrow { background: #d7b35c29; }
+
+    .notice {
+      margin: 0;
+      padding: 2rem 1rem;
+      border: 1px dashed var(--border);
+      border-radius: .9rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 56rem) {
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 35rem) {
+      .toolbar { flex-direction: column; align-items: flex-start; }
+      .search { width: 100%; }
+      .gallery { grid-template-columns: 1fr; }
+      .caption { min-height: 4.6rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .lesson-card, .cover img, .arrow { transition: none; }
+      .lesson-card:hover img { transform: none; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>📚 Ψηφιακή Βιβλιοθήκη</h1>
-      <p>Βιβλία και διαδραστικό υλικό μαθημάτων</p>
-    </header>
-    <section aria-labelledby="books-heading">
-      <h2 id="books-heading">Βιβλία μαθητή</h2>
-      <div class="grid" id="bookGrid" aria-live="polite"><p class="empty">Φόρτωση…</p></div>
-    </section>
-    <section aria-labelledby="lessons-heading">
-      <h2 id="lessons-heading">Διαδραστικά μαθήματα</h2>
-      <div class="grid" id="lessonGrid" aria-live="polite"><p class="empty">Φόρτωση…</p></div>
-    </section>
-    <footer>Τα διαδραστικά HTML ανοίγουν online από το GitHub. Η υπάρχουσα συλλογή βιβλίων διατηρείται.</footer>
-  </main>
-  <script>
-    const make = (tag, className, text) => {
-      const element = document.createElement(tag);
-      if (className) element.className = className;
-      if (text !== undefined) element.textContent = text;
-      return element;
-    };
-    const link = (href, label, secondary = false) => {
-      const a = make('a', `button${secondary ? ' secondary' : ''}`, label);
-      a.href = href;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      return a;
-    };
-    const showError = message => {
-      for (const id of ['bookGrid', 'lessonGrid']) {
-        const grid = document.getElementById(id);
-        grid.replaceChildren(make('p', 'error', message));
-      }
-    };
-    fetch('catalog.json', { cache: 'no-cache' })
-      .then(response => { if (!response.ok) throw new Error('catalog'); return response.json(); })
-      .then(catalog => {
-        const books = document.getElementById('bookGrid');
-        books.replaceChildren();
-        for (const book of catalog.books || []) {
-          const card = make('article', 'card');
-          card.append(make('span', 'tag', book.subject || 'Βιβλίο'));
-          card.append(make('h3', '', book.title || 'Χωρίς τίτλο'));
-          if (book.author) card.append(make('p', 'meta', `✍️ ${book.author}`));
-          if (book.pages) card.append(make('p', 'meta', `📄 ${book.pages} σελίδες`));
-          if (book.description) card.append(make('p', 'description', book.description));
-          const actions = make('div', 'actions');
-          if (book.file) actions.append(link(book.file, 'Λήψη CSV'));
-          if (book.url) actions.append(link(book.url, 'Raw URL', true));
-          card.append(actions);
-          books.append(card);
-        }
-        if (!books.children.length) books.append(make('p', 'empty', 'Δεν υπάρχουν καταχωρισμένα βιβλία.'));
+  <header class="shell">
+    <h1>Διαδραστικά μαθήματα</h1>
+    <p>Επίλεξε μια κάρτα για να ανοίξεις το μάθημα.</p>
+  </header>
 
-        const lessons = document.getElementById('lessonGrid');
-        lessons.replaceChildren();
-        for (const lesson of catalog.lessons || []) {
-          const card = make('article', 'card lesson');
-          card.append(make('span', 'tag', `${lesson.subject || 'Μάθημα'} · HTML`));
-          card.append(make('h3', '', lesson.title || 'Χωρίς τίτλο'));
-          if (lesson.description) card.append(make('p', 'description', lesson.description));
-          if (lesson.size_bytes) card.append(make('p', 'meta', `${(lesson.size_bytes / 1048576).toFixed(1)} MB`));
-          const actions = make('div', 'actions');
-          if (lesson.url) actions.append(link(lesson.url, 'Άνοιγμα μαθήματος'));
-          if (lesson.github_url) actions.append(link(lesson.github_url, 'Αρχείο στο GitHub', true));
-          card.append(actions);
-          lessons.append(card);
+  <main class="shell">
+    <div class="toolbar">
+      <label class="search">
+        <span class="visually-hidden">Αναζήτηση μαθήματος</span>
+        <input id="search" type="search" placeholder="Αναζήτηση μαθήματος" autocomplete="off" disabled>
+      </label>
+      <p class="status" id="status" role="status"></p>
+    </div>
+
+    <ul class="gallery" id="gallery" role="list" aria-label="Διαδραστικά μαθήματα"></ul>
+    <p class="notice" id="notice" hidden></p>
+    <noscript><p class="notice">Ενεργοποίησε τη JavaScript για να εμφανιστούν τα μαθήματα.</p></noscript>
+  </main>
+
+  <template id="lesson-template">
+    <li>
+      <a class="lesson-card">
+        <div class="cover"></div>
+        <div class="caption">
+          <h2></h2>
+          <span class="arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+    </li>
+  </template>
+
+  <script>
+    const search = document.getElementById('search');
+    const resultStatus = document.getElementById('status');
+    const gallery = document.getElementById('gallery');
+    const notice = document.getElementById('notice');
+    const template = document.getElementById('lesson-template');
+
+    function normalize(text) {
+      return text.normalize('NFD')
+        .replace(/\p{M}/gu, '')
+        .toLocaleLowerCase('el')
+        .replaceAll('ς', 'σ');
+    }
+
+    function createCard(lesson) {
+      const card = template.content.firstElementChild.cloneNode(true);
+      card.querySelector('a').setAttribute('href', lesson.file);
+      card.querySelector('h2').textContent = lesson.title;
+
+      if (lesson.thumbnail) {
+        const image = document.createElement('img');
+        image.alt = '';
+        image.width = 640;
+        image.height = 360;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        image.addEventListener('error', () => image.remove(), { once: true });
+        image.src = lesson.thumbnail;
+        card.querySelector('.cover').append(image);
+      }
+
+      return card;
+    }
+
+    async function loadLessons() {
+      resultStatus.textContent = 'Φόρτωση μαθημάτων…';
+
+      try {
+        const response = await fetch('./catalog.json', { cache: 'no-cache' });
+        if (!response.ok) throw new Error('Catalog unavailable');
+
+        const { lessons } = await response.json();
+        const entries = lessons.map(lesson => ({
+          card: createCard(lesson),
+          title: normalize(lesson.title)
+        }));
+        gallery.replaceChildren(...entries.map(entry => entry.card));
+        notice.textContent = entries.length
+          ? 'Δεν βρέθηκε μάθημα. Δοκίμασε άλλη λέξη.'
+          : 'Δεν υπάρχουν διαθέσιμα μαθήματα.';
+
+        function updateResults() {
+          const words = normalize(search.value.trim()).split(/\s+/);
+          let visible = 0;
+          for (const { card, title } of entries) {
+            card.hidden = !words.every(word => title.includes(word));
+            if (!card.hidden) visible++;
+          }
+
+          resultStatus.textContent = visible === entries.length
+            ? (visible === 1 ? '1 μάθημα' : visible + ' μαθήματα')
+            : visible + ' από ' + entries.length + ' μαθήματα';
+          notice.hidden = visible > 0;
         }
-        if (!lessons.children.length) lessons.append(make('p', 'empty', 'Δεν υπάρχουν καταχωρισμένα διαδραστικά μαθήματα.'));
-      })
-      .catch(() => showError('Δεν ήταν δυνατή η φόρτωση του καταλόγου.'));
+
+        search.disabled = false;
+        search.addEventListener('input', updateResults);
+        updateResults();
+      } catch {
+        resultStatus.textContent = 'Δεν ήταν δυνατή η φόρτωση των μαθημάτων. Δοκίμασε να ανανεώσεις τη σελίδα.';
+      }
+    }
+
+    loadLessons();
   </script>
 </body>
 </html>
