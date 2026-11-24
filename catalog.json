@@ -173,6 +173,16 @@
       "thumbnail": "assets/lesson-covers/na-agapate-ta-dentra.webp"
     },
     {
+      "id": "pyrgos-tis-vavel",
+      "title": "Ο Πύργος της Βαβέλ",
+      "subject": "Θρησκευτικά",
+      "file": "lessons/pyrgos-tis-vavel.html",
+      "size_bytes": 4702992,
+      "url": "https://dporpatonelis-crypto.github.io/digital-library-core/lessons/pyrgos-tis-vavel.html",
+      "github_url": "https://github.com/dporpatonelis-crypto/digital-library-core/blob/main/lessons/pyrgos-tis-vavel.html",
+      "thumbnail": "assets/lesson-covers/pyrgos-tis-vavel.webp"
+    },
+    {
       "id": "diognetus-stranger",
       "title": "Ξένοι στον κόσμο, οικείοι του Θεού",
       "subject": "Θρησκευτικά",
